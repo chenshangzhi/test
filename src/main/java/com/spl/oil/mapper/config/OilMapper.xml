@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.spl.oil.mapper.IOilMapper">
+    <insert id="insert" parameterType="Oil">
+    <selectKey keyProperty="id" resultType="long" order="BEFORE">
+             select nextval('seq_toi_oil') as id
+    </selectKey>
+    
+	    insert into toi_oil(id,name,type,createTime,notes) 
+	    values(#{id},#{name},#{type},#{createTime},#{notes})
+	</insert>
+	<update id="update" parameterType="Oil">
+	    update toi_oil set 
+	    name = #{name},
+	    type = #{type},
+	    notes = #{notes}
+	    where id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="long">
+	    delete from toi_oil where id= #{id}
+	</delete>
+	
+	<select id="get" parameterType="long" resultType="Oil">
+	    select * from toi_oil 
+	    where id = #{id}
+	</select>
+		
+	<select id="selectPageByParams" parameterType="map" resultType="Oil">
+	    select * from toi_oil ${where} 
+	    limit ${pageData.pageSize} offset ${(pageData.currentPage - 1) * pageData.pageSize}
+	</select>
+	
+	<select id="count" parameterType="map" resultType="int">
+	    select count(id) from toi_oil ${where}
+	</select>
+	
+	<select id="listNewOil"   resultType="Department">
+	SELECT  * from t_department 
+	
+
+	</select>
+	
+	
+	
+</mapper>
+
+

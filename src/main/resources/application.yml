@@ -1,0 +1,42 @@
+server: 
+    port: 8771
+    
+eureka: 
+    client: 
+        serviceUrl: 
+            defaultZone: http://172.16.0.4:8761/eureka/
+    healthcheck:
+        enabled: true
+    instance: 
+#        instance-id: 172.16.0.4:${server.port}
+         hostname: 172.16.0.4      #Eureka实例的主机名
+#    prefer-ip-address: true
+        
+spring: 
+    application: 
+        name: SS
+    datasource: 
+        url: jdbc:postgresql://rm-wz9gik0pd3r3wqvfuho.pg.rds.aliyuncs.com:3432/cqc
+        username: cqc2
+        password: cqc2_13799286733
+        driver-class-name: org.postgresql.Driver
+    mvc: 
+        view: 
+            prefix: /WEB-INF/view/
+            suffix: .jsp
+    thymeleaf: 
+        enabled: false
+           
+mybatis: 
+    mapper-locations: classpath:com/spl/**/mapper/config/*.xml
+    type-aliases-package: com.spl.oil.module
+    configurationProperties: 
+    
+pagehelper: 
+    helperDialect: postgresql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql 
+  
+#spring.thymeleaf.cash=false
+
