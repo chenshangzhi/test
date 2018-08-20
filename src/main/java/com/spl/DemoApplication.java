@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @MapperScan("com.spl.oil.mapper")
 public class DemoApplication {
-
+//注释一下
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
