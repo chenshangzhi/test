@@ -26,7 +26,7 @@ public class Product2 {
 	
 	
 	@RequestMapping("/b")
-	@ResponseBody
+	@ResponseBody 
     public  String b(HttpServletRequest re,HttpServletResponse res,ModelMap model){
 		return "这个是测试的:"+System.currentTimeMillis();
     }
