@@ -109,7 +109,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            
+            <defaultGoal>compile</defaultGoal>
         <!-- Docker maven plugin -->
         <!-- <plugin>
             <groupId>com.spotify</groupId>
