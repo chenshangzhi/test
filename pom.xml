@@ -104,6 +104,7 @@
     </dependencyManagement>
 
     <build>
+     <defaultGoal>package</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -111,7 +112,7 @@
             </plugin>
           
             
-            <defaultGoal>package</defaultGoal>  
+             
       
   
         <!-- Docker maven plugin -->
