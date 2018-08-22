@@ -10,9 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spl.oil.mapper.IOilMapper;
 import com.spl.oil.module.Address;
-import com.spl.oil.module.Department;
 import com.spl.oil.module.Person;
 import com.spl.oil.module.Sex;
 
@@ -24,10 +22,7 @@ public class Product {
 
 	@Autowired
 	DataSource ds;
-
-	@Autowired
-	IOilMapper mapper;
-
+ 
 	@RequestMapping("/list")
 	public List<Person> list(){
 		try{
@@ -43,10 +38,7 @@ public class Product {
 	}
 	
 
-	@RequestMapping("/list2")
-	public List<Department> list2(){
-		return mapper.listNewOil();
-	}
+	 
 	
 	
 }

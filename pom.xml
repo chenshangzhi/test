@@ -49,10 +49,7 @@
   
   
     
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
+      
         
         
         
@@ -137,21 +134,7 @@
          </plugins>
    
                   
-		<resources>
 		
-			<!-- 以下这个方法不管用，还是直接打包成war即可 -->  
-			<resource>
-			<!-- 指定resources插件处理哪个目录下的资源文件 -->
-			<directory>src/main/webapp</directory>
-			<!--注意此次必须要放在此目录下才能被访问到 -->
-			<targetPath>META-INF/resources</targetPath>
-			<includes>
-			<include>**/**</include>
-			</includes>
-			</resource>
-			<!-- 以下这个方法不管用，还是直接打包成war即可 -->    
-		
-		</resources>
 
 
     </build>
